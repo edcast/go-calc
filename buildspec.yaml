@@ -4,7 +4,7 @@ phases:
 
   pre_build:
     commands:
-      - docker login –u naveen09 –p Absolution999
+      - docker login –u=naveen09 –p=Absolution999
 
   build:
     commands:
