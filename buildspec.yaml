@@ -4,7 +4,8 @@ phases:
 
   pre_build:
     commands:
-      - docker login –u=naveen09 –p=Absolution999
+      - echo this is the login step
+      - docker login -u=naveen09 -p=Absolution999
 
   build:
     commands:
