@@ -5,6 +5,7 @@ phases:
     commands:
       - echo Entered the install phase...
       - yum update -y
+      - service docker status  
 
 pre_build:
     commands:
