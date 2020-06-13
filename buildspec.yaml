@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+	  
+pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - docker login –u naveen09 –p Absolution999
+
+build:
+    commands:
+      - echo Building the doecker image
+      - docker build -t go-calcapp .
+      - docker tag go-calcapp:latest naveen09/go-calc:latest
+
+post_build:
+    commands:
+      - echo Pushing the image to Naveen's docker hub repo
+      - docker push naveen09/go-calc:latest   
