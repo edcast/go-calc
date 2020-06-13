@@ -2,15 +2,15 @@ version: 0.2
 
 phases:
 
-pre_build:
+  pre_build:
     commands:
       - docker login –u naveen09 –p Absolution999
 
-build:
+  build:
     commands:
       - docker build -t go-calcapp .
       - docker tag go-calcapp:latest naveen09/go-calc:latest
 
-post_build:
+  post_build:
     commands:
       - docker push naveen09/go-calc:latest   
