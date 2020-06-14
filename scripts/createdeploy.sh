@@ -10,17 +10,17 @@ if [ $PODSTATUS == "Running" ]
 
 then
 
-echo "Termionating the pod"
+echo "Terminating the pod"
 
 kubectl delete pods/gocalc-app
 
 sleep 15
 
-kubectl apply -f /tmp/deploy.yaml
+kubectl create -f /tmp/deploy.yaml
 
 else
 
-kubectl apply -f /tmp/deploy.yaml
+kubectl create -f /tmp/deploy.yaml
 
 fi
 
