@@ -13,3 +13,9 @@ Bonus: Build the missing functionality
 
 <Naveen>: The logic for division operation has been added in the main.go script file. 
 Anything extra is always welcome
+
+
+Configuration file for CodeBuild : buildspec.yaml
+
+Configuration file with deployment hooks for CodeDeploy : appspec.yaml
+Bash scripts used for deployment of application to kubernetes cluster : scripts/
