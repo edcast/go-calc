@@ -1,0 +1,15 @@
+Build a docker image for the application and publish it
+
+<Naveen> - Docker image has been created for the application from the Dockerfile in the repo.
+Deploy the application in a kubernetes cluster - minikube will be fine. Deployment technique should be extendible to multiple environments.
+
+<Naveen> - A pipeline for automated deployment of the application has been created with the help of AWS Developer tools: 
+AWS-CodePipeline/AWS-CodeBUild/AWS-CodeDeploy
+
+During the build process the image is pushed to docker hub registry from which the application is deployed as a pod to the Kubernetes
+(1 master/1 worker) node cluster hosted on Ec2.
+
+Bonus: Build the missing functionality
+
+<Naveen>: The logic for division operation has been added in the main.go script file. 
+Anything extra is always welcome
