@@ -51,6 +51,7 @@ func multiply(w http.ResponseWriter, r *http.Request) {
 }
 
 
+
 func status(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "ok")
 }
