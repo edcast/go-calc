@@ -14,4 +14,10 @@ phases:
 
   post_build:
     commands:
-      - docker push naveen09/go-calc:latest   
+      - docker push naveen09/go-calc:latest
+
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/*
+  discard-paths : no      

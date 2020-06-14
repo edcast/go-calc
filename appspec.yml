@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+hooks:
+  BeforeInstall:
+    - location: scripts/createdeployspec.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/createdeploy.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: scripts/validatedeploy.sh
+      timeout: 300
+      runas: root
