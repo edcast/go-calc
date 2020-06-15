@@ -50,7 +50,7 @@ func multiply(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
-func division(w http.ResponseWriter, r *http.Request) {
+func divide(w http.ResponseWriter, r *http.Request) {
         w.Header().Set("Content-Type", "application/json")
         decoder := json.NewDecoder(r.Body)
         var request operands
@@ -72,7 +72,7 @@ func main() {
 	router.HandleFunc("/add", add).Methods("POST")
 	router.HandleFunc("/subtract", subtract).Methods("POST")
 	router.HandleFunc("/multiply", multiply).Methods("POST")
-	router.HandleFunc("/division", division).Methods("POST")
+	router.HandleFunc("/divide", divide).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
