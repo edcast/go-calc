@@ -17,6 +17,6 @@ spec:
         containers:
             - name: go-calc
               image: arielspace/go-calc:latest
-              imagePullPolicy: IfNotPresent
+              imagePullPolicy: Always
               ports:
               - containerPort: 8080
