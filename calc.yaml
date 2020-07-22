@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: go-calc
+  name: go-calc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: go-calc
+  template:
+    metadata:
+      labels:
+        name: go-calc
+    spec:
+        containers:
+            - name: go-calc
+              image: arielspace/go-calc:latest
+              imagePullPolicy: IfNotPresent
+              ports:
+              - containerPort: 8080

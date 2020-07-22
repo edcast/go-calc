@@ -6,8 +6,7 @@ install:
 build: install build_linux build_darwin
 
 build_linux:
-	mkdir -p ./build
-	GOOS=linux go build -o ./build/go-calc main.go
+	GOOS=linux go build -o ./go-calc main.go
 
 build_darwin:
 	mkdir -p ./build
