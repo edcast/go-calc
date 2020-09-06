@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: edcast
+  name: edcast
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edcast
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: edcast
+    spec:
+      containers:
+      - image: harshgulhane/edcast
+        name: edcast
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: edcast
+  name: edcast-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: edcast
+status:
+  loadBalancer: {}
