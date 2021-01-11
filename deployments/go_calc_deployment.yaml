@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: go-calc
-        image: ujjwalvns/go-calc:v2
+        image: ujjwalvns/go-calc:$env
         ports:
         - containerPort: 8080
