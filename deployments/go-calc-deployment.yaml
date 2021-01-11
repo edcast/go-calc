@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: go-calc
+  labels:
+    app: go-calc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: go-calc
+  template:
+    metadata:
+      labels:
+        run: go-calc
+    spec:
+      containers:
+      - name: go-calc
+        image: ujjwalvns/go-calc:v2
+        ports:
+        - containerPort: 8080

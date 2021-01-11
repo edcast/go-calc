@@ -1,0 +1,31 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "go-calc",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/go-calc",
+    "labels": {
+      "run": "go-calc"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 8080,
+        "nodePort": 30306
+      }
+    ],
+    "selector": {
+      "run": "go-calc"
+    },
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}
