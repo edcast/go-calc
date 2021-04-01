@@ -19,7 +19,7 @@ spec:
         app: go-app
     spec:
       containers:
-      - image: jasonchelt/anildemo:go-app
+      - image: jasonchelt/anildemo:go-app1
         name: anildemo
         resources: {}
 status: {}
