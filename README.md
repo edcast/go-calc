@@ -20,5 +20,6 @@
 
 
 [root@anil go-app]# curl http://ec2-18-188-219-184.us-east-2.compute.amazonaws.com:30007/div -d '{"operand1": 4, "operand2": 2}'
-2
+
+   2
 
