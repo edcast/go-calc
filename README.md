@@ -12,7 +12,7 @@ We have make use of the following tools for this process - </br>
 
 **[Docker]** - Which is used to build and publish image to the Docker Hub Repository. </br>
 
-**[Kubernetes]** - The Kubeconfig file is loaded into the Jenkins pipeline which acts as a authentication for accesssing kubernetes cluster and through the Kubernetes CLI tool (i.e. kubectl) building the kubernetes resources.</br>
+**[EKS]** - The Kubeconfig file is loaded into the Jenkins pipeline which acts as a authentication for accesssing kubernetes cluster and through the Kubernetes CLI tool (i.e. kubectl) building the kubernetes resources.</br>
 
 **[Helm Charts]** - This bascially bundles or package up the resource needed for building up the application. It also basically links the kubernetes objects which has been deployed for the kubernetes cluster.</br>
 
