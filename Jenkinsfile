@@ -59,7 +59,7 @@ def getnodehost (namespace, servicename) {
 pipeline {
     
     parameters {
-        string (name: 'GIT_BRANCH', defaultValue: 'main',  description: 'Git branch to build')
+        string (name: 'GIT_BRANCH', defaultValue: 'master',  description: 'Git branch to build')
 
     }
     
@@ -77,7 +77,7 @@ pipeline {
         stage('Git checkout'){
             steps{
                 echo "checkout code"
-                git branch: 'main', credentialsId: 'GitHubID', url: 'https://github.com/arif11111/Gocalc-Helm-.git'
+                git branch: 'main', credentialsId: 'GitHubID', url: 'https://github.com/arif11111/go-calc.git'
                 }
                
             }
