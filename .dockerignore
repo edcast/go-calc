@@ -1,0 +1,10 @@
+# Ignore everything
+**
+
+
+
+# Allow only required files
+!/vendor/*
+!/main.go
+!/Makefile
+!/Gopkg.toml
