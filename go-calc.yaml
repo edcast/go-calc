@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-calc
+  labels:
+    app: go-calc
+spec:
+  type: ClusterIP
+  ports:
+  - name: go-calc
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: go-calc    
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: go-calc
+spec:
+  serviceName: "go-calc"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-calc
+  template:
+    metadata:
+      labels:
+        app: go-calc
+    spec:
+      containers:
+      - name: go-calc
+        image: mystique04/go-calc
+        ports:
+        - containerPort: 8080
+          name: go-calc
+      imagePullSecrets:
+      - name: regcred
