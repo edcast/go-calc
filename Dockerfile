@@ -8,6 +8,5 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 RUN go mod init github.com/edcast/go-calc
 RUN go mod tidy
 RUN go mod vendor
-#EXPOSE 8080
+EXPOSE 8080
 CMD make run_local
-
