@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm-go.fullname" . }}
+  name: {{ include "helm-new.fullname" . }}
   labels:
-    {{- include "helm-go.labels" . | nindent 4 }}
+    {{- include "helm-new.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "helm-go.selectorLabels" . | nindent 4 }}
+    {{- include "helm-new.selectorLabels" . | nindent 4 }}

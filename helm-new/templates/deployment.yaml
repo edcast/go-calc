@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helm-go.fullname" . }}
+  name: {{ include "helm-new.fullname" . }}
   labels:
-    {{- include "helm-go.labels" . | nindent 4 }}
+    {{- include "helm-new.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "helm-go.selectorLabels" . | nindent 6 }}
+      {{- include "helm-new.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "helm-go.selectorLabels" . | nindent 8 }}
+        {{- include "helm-new.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "helm-go.serviceAccountName" . }}
+      serviceAccountName: {{ include "helm-new.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -37,7 +37,6 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-          
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
